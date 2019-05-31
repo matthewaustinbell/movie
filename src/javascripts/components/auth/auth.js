@@ -1,6 +1,6 @@
-//  import firebase from 'firebase/app';
+import firebase from 'firebase/app';
 
-//  import 'firebase/auth';
+import 'firebase/auth'; // comes in behind first import and attaches auth to all things you called firebase
 
 import util from '../../helpers/util';
 
