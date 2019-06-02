@@ -1,6 +1,13 @@
 import firebase from 'firebase/app';
 import 'firebase/auth';
 
+const authDiv = document.getElementById('auth');
+const movieDiv = document.getElementById('birfday');
+const movieNavbar = document.getElementById('navbar-button-birfday');
+const authNavbar = document.getElementById('navbar-button-auth');
+const logoutNavbar = document.getElementById('navbar-button-logout');
+
+
 const checkLoginStatus = () => {
   firebase.auth().onAuthStateChanged((user) => {
     if (user) {
@@ -10,7 +17,7 @@ const checkLoginStatus = () => {
       authNavbar.classList.add('hide');
       logoutNavbar.classList.remove('hide');
       Movie.movieStringBuilder(user.uid);
-      Friends.showFriends();
+      // Friends.showFriends();
     } else {
       authDiv.classList.remove('hide');
       movieDiv.classList.add('hide');
