@@ -1,3 +1,26 @@
+@import "~bootstrap/scss/bootstrap";
+
 body {
-  background-color: blue;
+  background-color: #39CCCC;
+}
+
+h1, .h1 {
+  font-size: 3.5rem;
+  -webkit-text-fill-color: snow;
+}
+
+h2, .h2 {
+  font-size: 2rem;
+  color: snow;
+}
+
+.hide{
+  display: none;
+}
+
+img{
+  vertical-align: -webkit-baseline-middle;
+  border-style: none;
+  width: 75;
+  width: 200px;
 }
