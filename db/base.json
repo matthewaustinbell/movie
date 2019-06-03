@@ -1,7 +1,7 @@
 {
-  "ageRating":"hi0",
-  "movies":"hi1",
-  "userMovie":"hi2",
-  "roles":"hi3",
-  "people":"hi4"
+  "moviePersonRoles": "movie",
+  "movies": "moo",  
+  "persons": "person",
+  "roles": "role",
+  "userMovies": "taledega"
 }

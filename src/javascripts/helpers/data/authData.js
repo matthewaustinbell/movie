@@ -1,6 +1,7 @@
 import firebase from 'firebase/app';
 import 'firebase/auth';
 
+
 const authDiv = document.getElementById('auth');
 const movieDiv = document.getElementById('birfday');
 const movieNavbar = document.getElementById('navbar-button-birfday');
