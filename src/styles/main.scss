@@ -24,3 +24,9 @@ img{
   width: 75;
   width: 200px;
 }
+
+#allMovies{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}

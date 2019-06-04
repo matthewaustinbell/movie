@@ -10,12 +10,15 @@ import apiKeys from './helpers/apiKeys.json';
 
 import '../styles/main.scss';
 
+import movie from './components/movie/Movie';
+
 //  initialize app makes an asynchronous request to firebase with you credential
 const init = () => {
   firebase.initializeApp(apiKeys.firebaseKeys);
   MyNavbar.navbarEvents();
   authData.checkLoginStatus();
   Auth.authStringBuilder();
+  movie.initMoviesData();
 };
 
 init();
