@@ -18,7 +18,7 @@ const movieStringBuilder = (movies) => {
     domString += `<img src=${movie.imageUrl} alt="movie location" />`;
     domString += `<h5>${movie.title}</5>`;
     domString += `<h6>${movie.mpaaRating}</h6>`;
-    domString += '<a href="#" class="btn btn-primary">Go somewhere</a>';
+    domString += '<a href="#" class="btn btn-link">Go somewhere</a>';
     domString += '</div>';
     domString += '</div>';
     domString += '</div>';
