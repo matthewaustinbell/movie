@@ -16,7 +16,7 @@ const movieStringBuilder = (movies) => {
     domString += `<div id=${movie.id} class="card" style="width: 25rem;">`;
     domString += '<div class="card-body">';
     domString += `<img src=${movie.imageUrl} alt="movie location" />`;
-    domString += `<h5>${movie.title}</5>`;
+    domString += `<h4>${movie.title}</h4>`;
     domString += `<h6>${movie.mpaaRating}</h6>`;
     domString += '<a href="#" class="btn btn-dark">Delete</a>';
     domString += '</div>';
