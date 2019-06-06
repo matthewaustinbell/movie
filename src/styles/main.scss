@@ -26,7 +26,26 @@ img{
 }
 
 #allMovies{
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: right;
+    margin-left: 26rem;
+}
+
+
+.col-3{
+  margin: 15px;
+    border: 1px solid BLACK;
+    box-shadow: 1px 2px 2px 1px;
+    padding: 0px;
+    -webkit-flex-flow: row wrap;
+    justify-content: space-around;
+    width: 30%;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-left: 5ppx;
+    margin-right: 5px;
+    max-width: 100%;
+    // background-color: blanchedalmond;
+    align-content: center;
 }
