@@ -1,10 +1,15 @@
+import firebase from 'firebase/app';
+import 'firebase/auth';
 import util from '../../helpers/util';
 import movieData from '../../helpers/data/movieData';
 
+const addToWatchedList = (e) => {
+  const buttonId = e.target.dataset.value;
+  console.error(buttonId);
+};
+
 const addEvents = () => {
-  document.getElementById('add-movie-button').addEventListener('click', () => {
-    console.error('add-movie-button');
-  });
+  document.addEventListener('click', addToWatchedList);
 };
 
 
@@ -19,6 +24,8 @@ const movieStringBuilder = (movies) => {
     domString += `<h4>${movie.title}</h4>`;
     domString += `<h6>${movie.mpaaRating}</h6>`;
     domString += '<a href="#" class="btn btn-dark">Delete</a>';
+    domString += `<a href="#" data-value="${movie.id}" class="btn btn-link watched">Watched</a>`;
+    domString += '<i class="material-icons">check_circle</i>';
     domString += '</div>';
     domString += '</div>';
     domString += '</div>';
@@ -29,8 +36,10 @@ const movieStringBuilder = (movies) => {
 };
 
 const initMoviesData = () => {
+  const userId = firebase.auth().currentUser.uid;
   movieData.getMoviesByUid()
     .then((movie) => {
+      userMoviesData.getUserMoviesById(userId);
       movieStringBuilder(movie);
     })
     .catch(err => console.error(err));
