@@ -1,7 +1,11 @@
-import firebase from 'firebase/app';
-import 'firebase/auth';
+// import firebase from 'firebase/app';
+// import 'firebase/auth';
 import util from '../../helpers/util';
 import movieData from '../../helpers/data/movieData';
+
+import userMoviesData from '../../helpers/data/userMoviesData';
+
+import join from '../../helpers/join';
 
 const addToWatchedList = (e) => {
   const buttonId = e.target.dataset.value;
@@ -35,14 +39,17 @@ const movieStringBuilder = (movies) => {
   addEvents();
 };
 
-const initMoviesData = () => {
-  const userId = firebase.auth().currentUser.uid;
+const initMoviesData = (uid) => {
+  // const userId = firebase.auth().currentUser.uid;
   movieData.getMoviesByUid()
     .then((movie) => {
-      userMoviesData.getUserMoviesById(userId);
-      movieStringBuilder(movie);
-    })
-    .catch(err => console.error(err));
+      userMoviesData.getUserMoviesById(uid)
+        .then((userMovies) => {
+          const newMovies = join.moviesUserMovies(movie, userMovies);
+          movieStringBuilder(newMovies);
+        })
+        .catch(err => console.error(err));
+    });
 };
 
 export default { initMoviesData };
