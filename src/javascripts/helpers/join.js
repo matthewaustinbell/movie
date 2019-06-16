@@ -7,8 +7,6 @@ const moviesUsermovies = (movie, userMovies) => movie.map((userMovie) => {
     newMovie.statusId = userMovie.statusId;
   }
   console.error(newMovie, '1');
-  console.error(newMovie, '2');
-  console.error(newMovie, '3');
   return newMovie;
 });
 
