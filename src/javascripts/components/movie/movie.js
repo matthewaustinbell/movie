@@ -41,15 +41,30 @@ const movieStringBuilder = (movies) => {
 
 const initMoviesData = (uid) => {
   // const userId = firebase.auth().currentUser.uid;
-  movieData.getMoviesByUid()
+  movieData.getMoviesByUid(uid)
     .then((movie) => {
-      userMoviesData.getUserMoviesById(uid)
+      userMoviesData.getUserMoviesByUid(uid)
         .then((userMovies) => {
+          console.error(movie);
+          // console.error(userMovies);
           const newMovies = join.moviesUserMovies(movie, userMovies);
-          movieStringBuilder(newMovies);
+          movieStringBuilder(newMovies, movie.id);
         })
-        .catch(err => console.error(err));
+        .catch(err => console.error('no movies', err));
     });
 };
+
+
+// const getFriends = (uid) => {
+//   friendsData.getFriendsByUid(uid)
+//     .then((friends) => {
+//       birfdayData.getBirfdayByUid(uid)
+//           .then((rsvps) => {
+//           const finalFriends = SMASH.friendRsvps(friends, rsvps);
+//           showFriends(finalFriends, bday.id);
+//         })
+//     .catch(err => console.error('no friends', err));
+// };
+
 
 export default { initMoviesData };

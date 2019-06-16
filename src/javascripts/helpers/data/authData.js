@@ -29,14 +29,6 @@ const createNewMovie = (e) => {
       document.getElementById('new-movie').classList.add('hide');
     });
 };
-  //     document.getElementById('name').value = '';
-  //     document.getElementById('email').value = '';
-  //     document.getElementById('birfday').classList.remove('hide');
-  //     document.getElementById('new-movie').classList.add('hide');
-  //     getMovies(firebase.auth().currentUser.uid); // eslint-disable-line no-use-before-define
-  //   })
-  //   .catch(err => console.error('no new friend for you', err));
-// };
 
 const newMovieButton = () => {
   console.error('createNewmovie');
