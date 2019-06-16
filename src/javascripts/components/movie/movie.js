@@ -9,7 +9,7 @@ import join from '../../helpers/join';
 
 const addToWatchedList = (e) => {
   const buttonId = e.target.dataset.value;
-  console.error(buttonId);
+  document.write(buttonId);
 };
 
 const addEvents = () => {
@@ -45,9 +45,7 @@ const initMoviesData = (uid) => {
     .then((movie) => {
       userMoviesData.getUserMoviesByUid(uid)
         .then((userMovies) => {
-          console.error(movie);
-          // console.error(userMovies);
-          const newMovies = join.moviesUserMovies(movie, userMovies);
+          const newMovies = join.moviesUsermovies(movie, userMovies);
           movieStringBuilder(newMovies, movie.id);
         })
         .catch(err => console.error('no movies', err));
