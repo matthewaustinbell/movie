@@ -9,7 +9,7 @@ import join from '../../helpers/join';
 
 const addToWatchedList = (e) => {
   const buttonId = e.target.dataset.value;
-  document.write(buttonId);
+  console.error(buttonId);
 };
 
 const addEvents = () => {
