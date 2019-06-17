@@ -36,7 +36,7 @@ const newMovieButton = () => {
   document.getElementById('saveNewMovie').addEventListener('click', createNewMovie);
 };
 
-const addEvents = () => {
+const addMovieEvent = () => {
   document.getElementById('add-movie-button').addEventListener('click', newMovieButton);
 };
 
@@ -50,7 +50,7 @@ const checkLoginStatus = () => {
       authNavbar.classList.add('hide');
       logoutNavbar.classList.remove('hide');
       movies.initMoviesData(user.uid);
-      addEvents();
+      addMovieEvent();
     } else {
       authDiv.classList.remove('hide');
       movieDiv.classList.add('hide');

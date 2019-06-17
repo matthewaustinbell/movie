@@ -17,4 +17,8 @@ const getUserMoviesByUid = uid => new Promise((resolve, reject) => {
     .catch(err => reject(err));
 });
 
-export default { getUserMoviesByUid };
+const addNewUserMovies = movieObject => axios.post(`${firebaseUrl}/movies.json`, movieObject);
+
+const editUserMovies = (userMoviesId, userMoviesObj) => axios.put(`${firebaseUrl}/rsvps/${userMoviesId}.json`, userMoviesObj);
+
+export default { getUserMoviesByUid, addNewUserMovies, editUserMovies };
