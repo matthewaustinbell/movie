@@ -6,6 +6,7 @@ const firebaseUrl = apiKeys.firebaseKeys.databaseURL;
 const getUserMoviesByUid = uid => new Promise((resolve, reject) => {
   axios.get(`${firebaseUrl}/userMovie.json?orderBy="uid"&equalTo="${uid}"`)
     .then((results) => {
+      console.error(results, uid);
       const userMoviesResults = results.data;
       const userMovies = [];
       Object.keys(userMoviesResults).forEach((userMoviesId) => {
@@ -19,6 +20,6 @@ const getUserMoviesByUid = uid => new Promise((resolve, reject) => {
 
 const addNewUserMovies = movieObject => axios.post(`${firebaseUrl}/movies.json`, movieObject);
 
-const editUserMovies = (userMoviesId, userMoviesObj) => axios.put(`${firebaseUrl}/rsvps/${userMoviesId}.json`, userMoviesObj);
+const editUserMovies = (userMoviesId, userMoviesObj) => axios.put(`${firebaseUrl}/userMovie/${userMoviesId}.json`, userMoviesObj);
 
 export default { getUserMoviesByUid, addNewUserMovies, editUserMovies };
