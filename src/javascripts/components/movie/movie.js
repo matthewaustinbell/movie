@@ -8,12 +8,11 @@ import userMoviesData from '../../helpers/data/userMoviesData';
 import join from '../../helpers/join';
 
 const addToWatchedList = (e) => {
+  console.error('addToWatchList running');
   const userMovieId = e.target.closest('.amovie').id;
   console.error(userMovieId);
+  console.error(e.target.value);
   const userMovie = {
-    // where do these come from?
-    // movieId: e.target.closest('test').id,
-    // userMoviesId: e.target.id.split('.')[1],
     statusId: e.target.value,
   };
   userMoviesData.editUserMovies(userMovieId, userMovie)
@@ -34,6 +33,7 @@ for (let j = 0; j < watchedButtons.length; j += 1) {
 }
 
 const movieStringBuilder = (movies) => {
+  console.error(movies);
   let domString = '<div class="row">';
   movies.forEach((movie) => {
     domString += '<div class="col-3">';
